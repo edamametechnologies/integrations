@@ -1,5 +1,5 @@
 {
-    "selector": "ip",
+    "selector": "Ip",
     "add_action": {
         "graphql": {
             "graphql_type": "Mutation",
