@@ -1,0 +1,36 @@
+{
+    "selector": "Ip",
+    "trigger_type": "Group",
+    "auth": {
+        "rest": {
+            "rest_type": "Post",
+            "url": "https://login.microsoftonline.com/${SECRETS.tenant_id}/oauth2/v2.0/token",
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            "body": {
+                "client_id": "${SECRETS.client_id}",
+                "scope": "https://graph.microsoft.com/.default",
+                "client_secret": "${SECRETS.client_secret}",
+                "grant_type": "client_credentials"
+            }
+        },
+        "export": "access_token"
+    },
+    "add_action": {
+        "rest": {
+            "rest_type": "Patch",
+            "url": "https://graph.microsoft.com/v1.0/identity/conditionalAccess/namedLocations/${SECRETS.location_id}",
+            "headers": {
+                "Authorization": "Bearer ${SECRETS.access_token}",
+                "Content-Type": "application/json"
+            },
+            "body": {
+                "@odata.type": "#microsoft.graph.ipNamedLocation",
+                "displayName": "Edamame_Cac",
+                "isTrusted": true,
+                "ipRanges": "${ENV.internal.azure_ip_ranges}"
+            }
+        }
+    }
+}
