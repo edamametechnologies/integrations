@@ -22,7 +22,7 @@
             "rest_type": "Patch",
             "url": "https://graph.microsoft.com/v1.0/identity/conditionalAccess/namedLocations/${SECRETS.location_id}",
             "headers": {
-                "Authorization": "Bearer ${SECRETS.access_token}",
+                "Authorization": "Bearer ${ENV.auth}",
                 "Content-Type": "application/json"
             },
             "body": {
