@@ -1,0 +1,26 @@
+{
+    "selector": "Ip",
+    "trigger_type": "Group",
+    "auth": {
+        "internal": "google_auth"
+    },
+    "add_action": {
+        "rest": {
+            "rest_type": "Patch",
+            "url": "https://accesscontextmanager.googleapis.com/v1/accessPolicies/${SECRETS.policy_id}/accessLevels/${SECRETS.access_level}?updateMask=basic%2Ctitle",
+            "headers": {
+                "Authorization": "Bearer ${ENV.auth}",
+                "Content-Type": "application/json"
+            },
+            "body": {
+                "basic": {
+                    "conditions": [
+                        {
+                            "ipSubnetworks": "${ENV.internal.google_ip}"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
