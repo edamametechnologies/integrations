@@ -1,0 +1,37 @@
+{
+    "selector": "Mac",
+    "trigger_type": "Group",
+    "add_action": {
+        "rest": [
+            {
+                "rest_type": "Post",
+                "bypass_error": true,
+                "url": "https://${SECRETS.fortiguardUrl}/api/v2/cmdb/firewall/address",
+                "headers": {
+                    "Authorization": "Bearer ${SECRETS.accessToken}",
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "name": "${ENV.user.device_id}",
+                    "type": "mac",
+                    "macaddr": [
+                        {
+                            "macaddr": "${ENV.user.mac}"
+                        }
+                    ]
+                }
+            },
+            {
+                "rest_type": "Put",
+                "url": "https://${SECRETS.fortiguardUrl}/api/v2/cmdb/firewall/addrgrp/${SECRETS.groupIpName}?datasource=true&with_meta=true&vdom=root",
+                "headers": {
+                    "Authorization": "Bearer ${SECRETS.accessToken}",
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "member": "${ENV.internal.google_ip}"
+                }
+            }
+        ]
+    }
+}
