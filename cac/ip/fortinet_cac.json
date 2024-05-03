@@ -29,7 +29,7 @@
                     "Content-Type": "application/json"
                 },
                 "body": {
-                    "member": "${ENV.internal.google_ip}"
+                    "member": "${ENV.internal.fortinet_mac}"
                 }
             }
         ]
