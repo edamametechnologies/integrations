@@ -23,7 +23,7 @@
             },
             {
                 "rest_type": "Put",
-                "url": "https://${SECRETS.fortiguardUrl}/api/v2/cmdb/firewall/addrgrp/${SECRETS.groupIpName}?datasource=true&with_meta=true&vdom=root",
+                "url": "https://${SECRETS.fortiguardUrl}/api/v2/cmdb/firewall/addrgrp/${SECRETS.groupName}?datasource=true&with_meta=true&vdom=root",
                 "headers": {
                     "Authorization": "Bearer ${SECRETS.accessToken}",
                     "Content-Type": "application/json"
