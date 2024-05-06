@@ -1,9 +1,9 @@
 {
     "selector": "Ip",
     "trigger_type": "User",
-    "add_action": [
-        {
-            "graphql": {
+    "add_action": {
+        "graphql": [
+            {
                 "graphql_type": "Mutation",
                 "url": "https://api.github.com/graphql",
                 "headers": {
@@ -18,8 +18,8 @@
                     "ownerId": "${SECRETS.ownerId}"
                 }
             }
-        }
-    ],
+        ]
+    },
     "delete_action": {
         "internal": {
             "description": "Delete IP from GitHub",
