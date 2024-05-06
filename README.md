@@ -1,1 +1,2 @@
-This repository contains the configurations for the access control feature of the EDAMAME Dashboard.
+This repository contains the configuration guides and examples for enterprise integrations withing the EDAMAME Dashboard.
+* Conditional Access Control guide: https://github.com/edamametechnologies/integrations/wiki 
