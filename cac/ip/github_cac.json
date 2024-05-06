@@ -1,23 +1,25 @@
 {
     "selector": "Ip",
     "trigger_type": "User",
-    "add_action": {
-        "graphql": {
-            "graphql_type": "Mutation",
-            "url": "https://api.github.com/graphql",
-            "headers": {
-                "Authorization": "Bearer ${SECRETS.accessToken}",
-                "User-Agent": "rust"
-            },
-            "query": "mutation ($input: CreateIpAllowListEntryInput!) {createIpAllowListEntry(input: $input) { clientMutationId ipAllowListEntry { id allowListValue isActive createdAt }}}",
-            "variables": {
-                "clientMutationId": "${ENV.user.device_id}",
-                "allowListValue": "${ENV.user.ip}",
-                "isActive": true,
-                "ownerId": "${SECRETS.ownerId}"
+    "add_action": [
+        {
+            "graphql": {
+                "graphql_type": "Mutation",
+                "url": "https://api.github.com/graphql",
+                "headers": {
+                    "Authorization": "Bearer ${SECRETS.accessToken}",
+                    "User-Agent": "rust"
+                },
+                "query": "mutation ($input: CreateIpAllowListEntryInput!) {createIpAllowListEntry(input: $input) { clientMutationId ipAllowListEntry { id allowListValue isActive createdAt }}}",
+                "variables": {
+                    "clientMutationId": "${ENV.user.device_id}",
+                    "allowListValue": "${ENV.user.ip}",
+                    "isActive": true,
+                    "ownerId": "${SECRETS.ownerId}"
+                }
             }
         }
-    },
+    ],
     "delete_action": {
         "internal": {
             "description": "Delete IP from GitHub",

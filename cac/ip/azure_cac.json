@@ -18,19 +18,21 @@
         "export": "access_token"
     },
     "add_action": {
-        "rest": {
-            "rest_type": "Patch",
-            "url": "https://graph.microsoft.com/v1.0/identity/conditionalAccess/namedLocations/${SECRETS.location_id}",
-            "headers": {
-                "Authorization": "Bearer ${ENV.auth}",
-                "Content-Type": "application/json"
-            },
-            "body": {
-                "@odata.type": "#microsoft.graph.ipNamedLocation",
-                "displayName": "Edamame_Cac",
-                "isTrusted": true,
-                "ipRanges": "${ENV.internal.azure_ip_ranges}"
+        "rest": [
+            {
+                "rest_type": "Patch",
+                "url": "https://graph.microsoft.com/v1.0/identity/conditionalAccess/namedLocations/${SECRETS.location_id}",
+                "headers": {
+                    "Authorization": "Bearer ${ENV.auth}",
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "@odata.type": "#microsoft.graph.ipNamedLocation",
+                    "displayName": "Edamame_Cac",
+                    "isTrusted": true,
+                    "ipRanges": "${ENV.internal.azure_ip_ranges}"
+                }
             }
-        }
+        ]
     }
 }
