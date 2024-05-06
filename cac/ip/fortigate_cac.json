@@ -6,6 +6,7 @@
             {
                 "rest_type": "Post",
                 "bypass_error": true,
+                "bypass_certificate": true,
                 "url": "https://${SECRETS.fortigateUrl}/api/v2/cmdb/firewall/address",
                 "headers": {
                     "Authorization": "Bearer ${SECRETS.accessToken}",
@@ -23,6 +24,7 @@
             },
             {
                 "rest_type": "Put",
+                "bypass_certificate": true,
                 "url": "https://${SECRETS.fortigateUrl}/api/v2/cmdb/firewall/addrgrp/${SECRETS.groupName}",
                 "headers": {
                     "Authorization": "Bearer ${SECRETS.accessToken}",
