@@ -6,7 +6,7 @@
             {
                 "rest_type": "Post",
                 "bypass_error": true,
-                "url": "https://${SECRETS.fortinetUrl}/api/v2/cmdb/firewall/address",
+                "url": "https://${SECRETS.fortiguardUrl}/api/v2/cmdb/firewall/address",
                 "headers": {
                     "Authorization": "Bearer ${SECRETS.accessToken}",
                     "Content-Type": "application/json"
@@ -23,13 +23,13 @@
             },
             {
                 "rest_type": "Put",
-                "url": "https://${SECRETS.fortinetUrl}/api/v2/cmdb/firewall/addrgrp/${SECRETS.groupName}?datasource=true&with_meta=true&vdom=root",
+                "url": "https://${SECRETS.fortiguardUrl}/api/v2/cmdb/firewall/addrgrp/${SECRETS.groupName}",
                 "headers": {
                     "Authorization": "Bearer ${SECRETS.accessToken}",
                     "Content-Type": "application/json"
                 },
                 "body": {
-                    "member": "${ENV.internal.fortinet_mac}"
+                    "member": "${ENV.internal.fortiguard_mac}"
                 }
             }
         ]
