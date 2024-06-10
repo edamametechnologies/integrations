@@ -1,5 +1,5 @@
 {
-    "selector": "Ip",
+    "selector": "Ip4",
     "trigger_type": "User",
     "add_action": {
         "graphql": [
@@ -13,7 +13,7 @@
                 "query": "mutation ($input: CreateIpAllowListEntryInput!) {createIpAllowListEntry(input: $input) { clientMutationId ipAllowListEntry { id allowListValue isActive createdAt }}}",
                 "variables": {
                     "clientMutationId": "${ENV.user.device_id}",
-                    "allowListValue": "${ENV.user.ip}",
+                    "allowListValue": "${ENV.user.ipv4}",
                     "isActive": true,
                     "ownerId": "${SECRETS.ownerId}"
                 }
@@ -25,7 +25,7 @@
             "description": "Delete IP from GitHub",
             "name": "delete_action_github",
             "variables": {
-                "allowListValue": "${ENV.user.ip}"
+                "allowListValue": "${ENV.user.ip4}"
             }
         }
     }
