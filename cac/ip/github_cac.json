@@ -13,7 +13,7 @@
                 "query": "mutation ($input: CreateIpAllowListEntryInput!) {createIpAllowListEntry(input: $input) { clientMutationId ipAllowListEntry { id allowListValue isActive createdAt }}}",
                 "variables": {
                     "clientMutationId": "${ENV.user.device_id}",
-                    "allowListValue": "${ENV.user.ip4}",
+                    "allowListValue": "${ENV.user.ipv4}",
                     "isActive": true,
                     "ownerId": "${SECRETS.ownerId}"
                 }
