@@ -28,7 +28,7 @@
                 },
                 "body": {
                     "@odata.type": "#microsoft.graph.ipNamedLocation",
-                    "displayName": "Edamame_Cac",
+                    "displayName": "${SECRETS.location_name}",
                     "isTrusted": true,
                     "ipRanges": "${ENV.internal.azure_ip_ranges}"
                 }
