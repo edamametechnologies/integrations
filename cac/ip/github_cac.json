@@ -15,7 +15,8 @@
                     "clientMutationId": "${ENV.user.device_id}",
                     "allowListValue": "${ENV.user.ipv4}",
                     "isActive": true,
-                    "ownerId": "${SECRETS.ownerId}"
+                    "ownerId": "${SECRETS.ownerId}",
+                    "name": "${ENV.user.username}"
                 }
             }
         ]
