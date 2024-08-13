@@ -1,4 +1,4 @@
-This repository contains the configuration guides and examples for enterprise integrations within the EDAMAME Dashboard.
+This repository contains the configuration guides and examples for enterprise integrations within the EDAMAME Hub.
 
 * Generic Conditional Access Control guide: [Conditional Access Control (using IP or MAC addresses)](https://github.com/edamametechnologies/integrations/wiki/Conditional-Access-Control-(using-IP-or-MAC-addresses))
 
