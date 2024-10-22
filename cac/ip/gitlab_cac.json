@@ -1,0 +1,19 @@
+{
+    "selector": "Ip",
+    "trigger_type": "Group",
+    "add_action": {
+        "rest": [
+            {
+                "rest_type": "Put",
+                "url": "https://https://gitlab.com/api/v4/groups/${SECRETS.groupId}",
+                "headers": {
+                    "PRIVATE-TOKEN": "${SECRETS.accessToken}",
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "ip_restriction_ranges": "${ENV.internal.gitlab_ip}"
+                }
+            }
+        ]
+    }
+}
