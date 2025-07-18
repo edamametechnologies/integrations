@@ -1,0 +1,13 @@
+{
+    "selector": "Ip",
+    "trigger_type": "Group",
+    "add_action": {
+        "internal": {
+            "name": "add_action_netbird",
+            "description": "Add peerid(s) for the whitelist device",
+            "variables": {
+                "devices": "${ENV.internal.netbird_ip}"
+            }
+        }
+    }
+}
