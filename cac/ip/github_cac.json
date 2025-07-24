@@ -1,5 +1,5 @@
 {
-    "selector": "Ip4",
+    "selector": "Ip",
     "trigger_type": "User",
     "add_action": {
         "graphql": [
