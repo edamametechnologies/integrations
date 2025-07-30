@@ -16,7 +16,7 @@
                     "allowListValue": "${ENV.user.ipv4}",
                     "isActive": true,
                     "ownerId": "${SECRETS.ownerId}",
-                    "name": "${ENV.user.username}"
+                    "name": "${ENV.user.username}-ipv4"
                 }
             },
             {
@@ -32,7 +32,7 @@
                     "allowListValue": "${ENV.user.ipv6}",
                     "isActive": true,
                     "ownerId": "${SECRETS.ownerId}",
-                    "name": "${ENV.user.username}"
+                    "name": "${ENV.user.username}-ipv6"
                 }
             }
         ]
