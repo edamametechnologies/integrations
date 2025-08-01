@@ -1,34 +1,13 @@
 {
     "selector": "Ip",
-    "trigger_type": "User",
+    "trigger_type": "Group",
     "add_action": {
-        "rest": [
-            {
-                "rest_type": "Post",
-                "url": "https://${SECRETS.baseUrl}/api/v2/device/${ENV.user.peerIds.tailscaleId}/authorized",
-                "headers": {
-                    "Authorization": "Bearer ${SECRETS.accessToken}",
-                    "Content-Type": "application/json"
-                },
-                "body": {
-                    "authorized": true
-                }
+        "internal": {
+            "name": "add_action_tailscale",
+            "description": "Authorized or unauthorized devices from Tailscale",
+            "variables": {
+                "devices": "${ENV.internal.tailscale_ids}"
             }
-        ]
-    },
-    "delete_action": {
-        "rest": [
-            {
-                "rest_type": "Post",
-                "url": "https://${SECRETS.baseUrl}/api/v2/device/${ENV.user.peerIds.tailscaleId}/authorized",
-                "headers": {
-                    "Authorization": "Bearer ${SECRETS.accessToken}",
-                    "Content-Type": "application/json"
-                },
-                "body": {
-                    "authorized": false
-                }
-            }
-        ]
+        }
     }
 }
