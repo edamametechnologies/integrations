@@ -1,0 +1,13 @@
+{
+    "selector": "Ip",
+    "trigger_type": "Group",
+    "add_action": {
+        "internal": {
+            "name": "add_action_tailscale",
+            "description": "Authorized or unauthorized devices from Tailscale",
+            "variables": {
+                "devices": "${ENV.internal.tailscale_ids}"
+            }
+        }
+    }
+}

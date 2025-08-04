@@ -1,5 +1,5 @@
 {
-    "selector": "ipv4",
+    "selector": "Ips",
     "trigger_type": "User",
     "add_action": {
         "graphql": [
@@ -12,11 +12,27 @@
                 },
                 "query": "mutation ($input: CreateIpAllowListEntryInput!) {createIpAllowListEntry(input: $input) { clientMutationId ipAllowListEntry { id allowListValue isActive createdAt }}}",
                 "variables": {
-                    "clientMutationId": "${ENV.user.deviceId}",
+                    "clientMutationId": "${ENV.user.deviceId}ipv4",
                     "allowListValue": "${ENV.user.ipv4}",
                     "isActive": true,
                     "ownerId": "${SECRETS.ownerId}",
-                    "name": "${ENV.user.username}"
+                    "name": "${ENV.user.username}-ipv4"
+                }
+            },
+            {
+                "graphql_type": "Mutation",
+                "url": "https://api.github.com/graphql",
+                "headers": {
+                    "Authorization": "Bearer ${SECRETS.accessToken}",
+                    "User-Agent": "rust"
+                },
+                "query": "mutation ($input: CreateIpAllowListEntryInput!) {createIpAllowListEntry(input: $input) { clientMutationId ipAllowListEntry { id allowListValue isActive createdAt }}}",
+                "variables": {
+                    "clientMutationId": "${ENV.user.deviceId}ipv6",
+                    "allowListValue": "${ENV.user.ipv6}",
+                    "isActive": true,
+                    "ownerId": "${SECRETS.ownerId}",
+                    "name": "${ENV.user.username}-ipv6"
                 }
             }
         ]
