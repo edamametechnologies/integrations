@@ -5,7 +5,7 @@
         "rest": [
             {
                 "rest_type": "Put",
-                "url": "https://gitlab.com/api/v4/groups/${SECRETS.groupId}",
+                "url": "https://${SECRETS.baseUrl}/api/v4/groups/${SECRETS.groupId}",
                 "headers": {
                     "PRIVATE-TOKEN": "${SECRETS.accessToken}",
                     "Content-Type": "application/json"
