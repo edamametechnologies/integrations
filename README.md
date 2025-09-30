@@ -8,4 +8,8 @@ This repository contains the configuration guides and examples for enterprise in
 
 * GitLab Access Control guide: [Setting Up GitLab for Access Control Integration](https://github.com/edamametechnologies/integrations/wiki/Setting-Up-GitLab-for-Access-Control-Integration)
 
+* Netbird Access Control guide: [Setting Up Netbird for Access Control Integration](https://github.com/edamametechnologies/integrations/wiki/Setting-Up-Netbird-for-Access-Control-Integration)
+
+* Tailscale Access Control guide: [Setting Up Tailscale for Access Control Integration](https://github.com/edamametechnologies/integrations/wiki/Setting-Up-Tailscale-for-Access-Control-Integration)
+
 * Custom Conditional Access Control guide (using IP or MAC addresses): [Custom Conditional Access Control guide (using IP or MAC addresses)](https://github.com/edamametechnologies/integrations/wiki/Comprehensive-JSON-Configuration-Guide-for-IP-Allow-List-Management)
