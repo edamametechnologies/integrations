@@ -6,7 +6,7 @@
     "internal": {
       "name": "add_action_netskope",
       "device": {
-        "nsdeviceuid": "${ENV.user.peerIds.netskope/nsdeviceuid}",
+        "device_id": "${ENV.user.peerIds.netskope/device_id}",
         "userkey": "${ENV.user.peerIds.netskope/userkey}",
         "hostname": "${ENV.user.peerIds.netskope/hostname}"
       }
