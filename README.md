@@ -12,4 +12,6 @@ This repository contains the configuration guides and examples for enterprise in
 
 * Tailscale Access Control guide: [Setting Up Tailscale for Access Control Integration](https://github.com/edamametechnologies/integrations/wiki/Setting-Up-Tailscale-for-Access-Control-Integration)
 
+* Fortigate Access Control guide: [Setting Up Fortigate for Access Control Integration](https://github.com/edamametechnologies/integrations/wiki/Setting-Up-Fortigate-for-Access-Control-Integration)
+
 * Custom Conditional Access Control guide (using IP or MAC addresses): [Custom Conditional Access Control guide (using IP or MAC addresses)](https://github.com/edamametechnologies/integrations/wiki/Comprehensive-JSON-Configuration-Guide-for-IP-Allow-List-Management)
